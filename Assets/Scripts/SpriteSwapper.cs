@@ -7,8 +7,8 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(Destroyable))]
 public class SpriteSwapper : MonoBehaviour
 {
-    [FormerlySerializedAs("RepairedSprite")] [SerializeField] private Sprite repairedSprite;
-    [FormerlySerializedAs("DestroyedSprite")] [SerializeField] private Sprite destroyedSprite;
+    [SerializeField] private Sprite repairedSprite;
+    [SerializeField] private Sprite destroyedSprite;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     private Destroyable _destroyable;
@@ -16,8 +16,11 @@ public class SpriteSwapper : MonoBehaviour
 
     private void OnValidate()
     {
-        if(repairedSprite == null || destroyedSprite == null || spriteRenderer == null)
+        if (repairedSprite == null || destroyedSprite == null || spriteRenderer == null)
+        {
             Debug.LogError($"Sprite wrapper {this} is not setup!");
+            return;
+        }
 
         spriteRenderer.sprite = repairedSprite;
     }
@@ -25,7 +28,6 @@ public class SpriteSwapper : MonoBehaviour
     private void Awake()
     {
         _destroyable = GetComponent<Destroyable>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()

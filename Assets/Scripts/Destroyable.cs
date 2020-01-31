@@ -24,7 +24,7 @@ public class Destroyable : MonoBehaviour
             return;
         }
 
-        IsDestroyed = false;
+        IsDestroyed = true;
         Destroyed?.Invoke(this);
         onDestroyed.Invoke();
     }
@@ -33,11 +33,11 @@ public class Destroyable : MonoBehaviour
     {
         if (!IsDestroyed)
         {
-            Debug.LogError($"Can't repair {this}: It's already destroyed!");
+            Debug.LogError($"Can't repair {this}: It's already repaired!");
             return;
         }
 
-        IsDestroyed = true;
+        IsDestroyed = false;
         Repaired?.Invoke(this);
         onRepaired.Invoke();
     }

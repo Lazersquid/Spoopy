@@ -8,6 +8,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Destroyable.cs" t="Include" />
+          <e p="DestroyableTester.cs" t="Include" />
+          <e p="Ghost.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="SpriteSwapper.cs" t="Include" />
         </e>
       </e>
