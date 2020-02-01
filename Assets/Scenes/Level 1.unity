@@ -23719,7 +23719,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  totalTime: 10
+  totalTime: 100
 --- !u!114 &1959047298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24076,16 +24076,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6837377222253651710, guid: 7798b2c7e67cc3a4499bc0ca794ee5ca,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6837377222253651710, guid: 7798b2c7e67cc3a4499bc0ca794ee5ca,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6837377222740497656, guid: 7798b2c7e67cc3a4499bc0ca794ee5ca,
         type: 3}
       propertyPath: m_Name
