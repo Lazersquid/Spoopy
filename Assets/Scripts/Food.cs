@@ -17,7 +17,7 @@ namespace DefaultNamespace
         // Update is called once per frame
         void Update()
         {
-
+            transform.Rotate(new Vector3(0f, 0f, 0.5f * Mathf.Sin(Time.time * 5f))); ;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

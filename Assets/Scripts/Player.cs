@@ -11,12 +11,15 @@ public class Player : MonoBehaviour
     private Rigidbody2D body;
     private bool onGround;
 
+    private Transform janitor;
+
     private Vector2 refVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        janitor = transform.Find("JanitorSprite");
     }
 
     // Update is called once per frame
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour
                 body.velocity = new Vector2(body.velocity.x, jumpSpeed);
             }
         }
+
+        janitor.localScale = new Vector3(-Mathf.Sign(body.velocity.x), 1f, 1f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
