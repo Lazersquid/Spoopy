@@ -10,10 +10,16 @@ public class Ghost : MonoBehaviour
     private Rigidbody2D body;
     private Vector2 refVelocity;
 
+    private Vector2 lowerLeft;
+    private Vector2 upperRight;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+
+        lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        upperRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
     }
 
     // Update is called once per frame
@@ -46,6 +52,10 @@ public class Ghost : MonoBehaviour
         }
 
         transform.localEulerAngles = new Vector3(0f, 0f, -2 * body.velocity.x);
+
+        transform.position = new Vector2(
+            Mathf.Clamp(transform.position.x, lowerLeft.x, upperRight.x),
+            Mathf.Clamp(transform.position.y, lowerLeft.y, upperRight.y));
     }
 
     private Vector2 SmoothVelocity(Vector2 target)
