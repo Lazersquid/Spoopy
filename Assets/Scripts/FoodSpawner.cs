@@ -24,11 +24,22 @@ public class FoodSpawner : MonoBehaviour
     }
     void SpawnRandom()
     {
-        Debug.Log(GameObject.FindGameObjectsWithTag("Food").Length);
         if (GameObject.FindGameObjectsWithTag("Food").Length < maxObjects)
         {
             int pointIndex = Random.Range(0, spawnPoints.Length);
             int itemIndex = Random.Range(0, foodItems.Length);
+
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(spawnPoints[pointIndex].transform.position, 0.2f);
+            Debug.Log(hitColliders.Length);
+            foreach(Collider2D hitCollider in hitColliders)
+            {
+                if (hitCollider.gameObject.tag == "Food")
+                {
+                    Debug.Log("There is already food at this point, spawning elsewhere");
+                    SpawnRandom();
+                    return;
+                }
+            }
 
             Instantiate(foodItems[itemIndex], spawnPoints[pointIndex].transform);
         }
