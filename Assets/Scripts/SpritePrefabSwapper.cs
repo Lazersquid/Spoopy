@@ -55,13 +55,13 @@ public class SpritePrefabSwapper : MonoBehaviour
 
     private void DestroyableOnRepaired(Destroyable destroyable)
     {
-        spriteRenderer.enabled = true;
+        spriteRenderer.gameObject.SetActive(true);
         brokenVariant.SetActive(false);
     }
 
     private void DestroyableOnDestroyed(Destroyable destroyable)
     {
-        spriteRenderer.enabled = false;
+        spriteRenderer.gameObject.SetActive(false);
         brokenVariant.SetActive(true);
     }
 }
