@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private bool onGround;
 
     private Transform janitor;
+    private Animator janitorAnimator;
 
     private Vector2 refVelocity;
 
@@ -25,7 +26,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        janitor = transform.Find("JanitorSprite");
+        janitor = transform.Find("JanitorAnimation");
+        janitorAnimator = janitor.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,12 +36,20 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             body.velocity = SmoothVelocity(new Vector2(-movementSpeed, body.velocity.y));
+            janitorAnimator.Play("JanitorWalks");
+            janitor.localScale = new Vector3(-Mathf.Sign(body.velocity.x), 1f, 1f);
         } else if (Input.GetKey(KeyCode.D))
         {
             body.velocity = SmoothVelocity(new Vector2(movementSpeed, body.velocity.y));
+            janitorAnimator.Play("JanitorWalks");
+            janitor.localScale = new Vector3(-Mathf.Sign(body.velocity.x), 1f, 1f);
         } else
         {
             body.velocity = SmoothVelocity(new Vector2(0, body.velocity.y));
+            if (!janitorAnimator.GetCurrentAnimatorStateInfo(0).IsName("JanitorHits"))
+            {
+                janitorAnimator.Play("JanitorStands");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -58,8 +68,6 @@ public class Player : MonoBehaviour
                     
             }
         }
-
-        janitor.localScale = new Vector3(-Mathf.Sign(body.velocity.x), 1f, 1f);
     }
 
     private bool ShootGroundedRay(Vector2 origin, Vector2 direction, float distance)
