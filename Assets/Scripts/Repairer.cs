@@ -12,6 +12,8 @@ namespace DefaultNamespace
         
         [Space]
         [SerializeField] private int maxEnergy;
+        public int MaxEnergy => maxEnergy;
+        
         [SerializeField] private int startingEnergy;
         public int CurrentEnergy { get; private set; }
 
@@ -27,7 +29,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            CurrentEnergy = startingEnergy;
+            ChangeEnergy(startingEnergy);
         }
 
         private void Update()
