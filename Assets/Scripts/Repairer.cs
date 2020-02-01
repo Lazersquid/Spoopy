@@ -25,7 +25,9 @@ namespace DefaultNamespace
 
         [SerializeField] private UnityEvent OnEnergyChanged;
         public event Action<int> EnergyChanged;
-        
+
+        [SerializeField] private UnityEvent onFoodCollected;
+        public event Action FoodCollected;
 
         private void Start()
         {
@@ -64,6 +66,12 @@ namespace DefaultNamespace
             RepairedDestroyable?.Invoke(destroyable);
         }
 
+        public void ConsumeFood(int grantedEnergy)
+        {
+            ChangeEnergy(grantedEnergy);
+            onFoodCollected.Invoke();
+        }
+        
         public void ChangeEnergy(int energyDelta)
         {
             CurrentEnergy = Mathf.Clamp(CurrentEnergy + energyDelta, 0, maxEnergy);

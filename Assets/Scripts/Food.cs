@@ -8,12 +8,6 @@ namespace DefaultNamespace
     {
         public int energy = 50;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
         // Update is called once per frame
         void Update()
         {
@@ -25,7 +19,7 @@ namespace DefaultNamespace
             Repairer repairer = collision.gameObject.GetComponent<Repairer>();
             if (repairer != null)
             {
-                repairer.ChangeEnergy(energy);
+                repairer.ConsumeFood(energy);
                 Destroy(gameObject);
             }
         }
