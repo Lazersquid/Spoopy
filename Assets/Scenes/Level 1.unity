@@ -265,6 +265,7 @@ MonoBehaviour:
   foodItems:
   - {fileID: 945939575402369287, guid: 0e833d8ce3b15da4fb9ef94c71f3b296, type: 3}
   - {fileID: 3634086274134442750, guid: b294e6781f589e442a8222a659d19fd2, type: 3}
+  - {fileID: 1846229458263947385, guid: ca232e3a0e93ffc45935dc5a33bced1f, type: 3}
   spawnInterval: 5
 --- !u!4 &129157853
 Transform:
