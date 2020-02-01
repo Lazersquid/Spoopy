@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -14,14 +15,16 @@ public class Timer : MonoBehaviour
     private Transform timerBar;
     private Camera camera;
 
+    private Transform dayNightCycle;
+
     // Start is called before the first frame update
     void Start()
     {
         timeRemaining = totalTime;
-
         timerBar = GameObject.Find("TimerBar").transform;
-
         camera = Camera.main;
+
+        dayNightCycle = GameObject.Find("DayNightCycle").transform;
     }
 
     // Update is called once per frame
@@ -29,6 +32,8 @@ public class Timer : MonoBehaviour
     {
         if (timeRemaining > 0f)
         {
+            dayNightCycle.Rotate(new Vector3(0f, 0f, (Time.deltaTime / totalTime) * 90f));
+
             timeRemaining -= Time.deltaTime;
             float progress = (totalTime - timeRemaining) / totalTime;
             timerBar.localScale = new Vector3(progress, 1f, 1f);
@@ -43,5 +48,7 @@ public class Timer : MonoBehaviour
     void EndGame()
     {
         gameEnded = true;
+
+        SceneManager.LoadScene("JanitorWon");
     }
 }
