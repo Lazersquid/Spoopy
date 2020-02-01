@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D body;
     private bool onGround;
 
+    private Vector2 refVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +23,13 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            body.velocity = new Vector2(-movementSpeed, body.velocity.y);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(-movementSpeed, body.velocity.y), ref refVelocity, 0.1f);
         } else if (Input.GetKey(KeyCode.D))
         {
-            body.velocity = new Vector2(movementSpeed, body.velocity.y);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(movementSpeed, body.velocity.y), ref refVelocity, 0.1f);
         } else
         {
-            body.velocity = new Vector2(0, body.velocity.y);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(0, body.velocity.y), ref refVelocity, 0.1f);
         }
 
         if (Input.GetKeyDown(KeyCode.W))

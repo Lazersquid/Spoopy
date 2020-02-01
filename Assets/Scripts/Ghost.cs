@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    private Rigidbody2D body;
     public float movementSpeed = 5f;
+
+    private Rigidbody2D body;
+    private Vector2 refVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -18,28 +20,28 @@ public class Ghost : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            body.velocity = new Vector2(-movementSpeed, body.velocity.y);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(-movementSpeed, body.velocity.y), ref refVelocity, 0.1f);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            body.velocity = new Vector2(movementSpeed, body.velocity.y);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(movementSpeed, body.velocity.y), ref refVelocity, 0.1f);
         }
         else
         {
-            body.velocity = new Vector2(0, body.velocity.y);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(0, body.velocity.y), ref refVelocity, 0.1f);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            body.velocity = new Vector2(body.velocity.x, movementSpeed);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(body.velocity.x, movementSpeed), ref refVelocity, 0.1f);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            body.velocity = new Vector2(body.velocity.x, -movementSpeed);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(body.velocity.x, -movementSpeed), ref refVelocity, 0.1f);
         }
         else
         {
-            body.velocity = new Vector2(body.velocity.x, 0);
+            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(body.velocity.x, 0), ref refVelocity, 0.1f);
         }
     }
 }
