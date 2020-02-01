@@ -7,6 +7,9 @@ using UnityEngine.Events;
 [DisallowMultipleComponent]
 public class Destroyable : MonoBehaviour
 {
+    [SerializeField] private int requiredEnergyToRepair;
+    public int RequiredEnergyToRepair => requiredEnergyToRepair;
+
     public bool IsDestroyed { get; private set; }
 
     [SerializeField] private UnityEvent onDestroyed;

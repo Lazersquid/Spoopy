@@ -9,9 +9,12 @@
         <e p="Scripts" t="Include">
           <e p="Destroyable.cs" t="Include" />
           <e p="DestroyableTester.cs" t="Include" />
+          <e p="Destroyer.cs" t="Include" />
           <e p="Ghost.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="Repairer.cs" t="Include" />
           <e p="SpriteSwapper.cs" t="Include" />
+          <e p="Timer.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
