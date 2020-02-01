@@ -205,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
         type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
         type: 3}
@@ -292,6 +292,31 @@ PrefabInstance:
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154888823464211022, guid: 802c6ad5cc25b094090597d2301d1772,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9154888823464211023, guid: 802c6ad5cc25b094090597d2301d1772,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -372,6 +397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Create Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154888823464211022, guid: 4783a7c77b08a634e9cdf311b279f7f2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9154888823464211023, guid: 4783a7c77b08a634e9cdf311b279f7f2,
         type: 3}
