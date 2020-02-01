@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float movementSpeed = 5f;
     public float jumpSpeed = 5f;
+    public float smoothing = 0.07f;
 
     private Rigidbody2D body;
     private bool onGround;
@@ -23,13 +24,13 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(-movementSpeed, body.velocity.y), ref refVelocity, 0.1f);
+            body.velocity = SmoothVelocity(new Vector2(-movementSpeed, body.velocity.y));
         } else if (Input.GetKey(KeyCode.D))
         {
-            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(movementSpeed, body.velocity.y), ref refVelocity, 0.1f);
+            body.velocity = SmoothVelocity(new Vector2(movementSpeed, body.velocity.y));
         } else
         {
-            body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(0, body.velocity.y), ref refVelocity, 0.1f);
+            body.velocity = SmoothVelocity(new Vector2(0, body.velocity.y));
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -55,5 +56,9 @@ public class Player : MonoBehaviour
         {
             onGround = false;
         }
+    }
+    private Vector2 SmoothVelocity(Vector2 target)
+    {
+        return Vector2.SmoothDamp(body.velocity, target, ref refVelocity, smoothing);
     }
 }
