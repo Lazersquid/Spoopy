@@ -15,6 +15,9 @@ namespace DefaultNamespace
         [SerializeField] private int startingEnergy;
         public int CurrentEnergy { get; private set; }
 
+        [SerializeField] private UnityEvent onRepairedDestroyable;
+        public event Action<Destroyable> RepairedDestroyable;
+        
         [SerializeField] private UnityEvent OnNotEnoughEnergyToRepair;
         public event Action NotEnoughEnergyToRepair;
 
@@ -34,23 +37,29 @@ namespace DefaultNamespace
                 var hits = Physics2D.OverlapCircleAll(transform.position, repairRadius, repairLayerMask);
                 for (int i = 0; i < hits.Length; i++)
                 {
+                    //TODO: Retrieve closest destroyable instead of just the first one in the array
                     var destroyable = hits[i].GetComponent<Destroyable>();
                     if (destroyable != null && destroyable.IsDestroyed)
                     {
-                        if (destroyable.RequiredEnergyToRepair > CurrentEnergy)
+                        if (destroyable.RequiredEnergyToRepair <= CurrentEnergy)
+                            Repair(destroyable);
+                        else
                         {
                             OnNotEnoughEnergyToRepair.Invoke();
                             NotEnoughEnergyToRepair?.Invoke();
-                        }
-                        else
-                        {
-                            ChangeEnergy(-destroyable.RequiredEnergyToRepair);
-                            destroyable.Repair();
                         }
                         break;
                     }
                 }
             }
+        }
+
+        public void Repair(Destroyable destroyable)
+        {
+            ChangeEnergy(-destroyable.RequiredEnergyToRepair);
+            destroyable.Repair();
+            onRepairedDestroyable.Invoke();
+            RepairedDestroyable?.Invoke(destroyable);
         }
 
         public void ChangeEnergy(int energyDelta)

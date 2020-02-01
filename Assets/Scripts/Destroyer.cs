@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DefaultNamespace
 {
@@ -9,6 +10,9 @@ namespace DefaultNamespace
         [SerializeField] private float destroyRadius;        
         [SerializeField] private LayerMask destroyablesLayermask;
 
+        [SerializeField] private UnityEvent onDestroyedDestroyable;
+        public event Action<Destroyable> DestroyedDestroyable;
+        
         private void Update()
         {
             if (Input.GetKeyDown(destroyKey))
@@ -19,11 +23,18 @@ namespace DefaultNamespace
                     var destroyable = hits[i].GetComponent<Destroyable>();
                     if (destroyable != null && !destroyable.IsDestroyed)
                     {
-                        destroyable.Destroy();
+                        Destroy(destroyable);
                         break;
                     }
                 }
             }
+        }
+
+        public void Destroy(Destroyable destroyable)
+        {
+            destroyable.Destroy();
+            onDestroyedDestroyable.Invoke();
+            DestroyedDestroyable?.Invoke(destroyable);
         }
     }
 }
