@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(Destroyable))]
 public class SpritePrefabSwapper : MonoBehaviour
 {
     [SerializeField] private Sprite repairedSprite;
