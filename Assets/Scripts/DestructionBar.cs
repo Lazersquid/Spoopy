@@ -83,6 +83,7 @@ public class DestructionBar : MonoBehaviour
     private void UpdateDestructionbar()
     {
         float progress = 1 - (float)(maxDestructionPoints - CurrDestructionPoints) / maxDestructionPoints;
-        destructionBar.localScale = new Vector3(progress, 1f, 1f);
+        if(destructionBar != null)
+            destructionBar.localScale = new Vector3(progress, 1f, 1f);
     }
 }
