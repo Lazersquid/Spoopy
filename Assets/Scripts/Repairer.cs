@@ -41,8 +41,17 @@ namespace DefaultNamespace
             {
                 var closest = Utility.GetClosestDestroyableInRange(transform.position, repairRadius, repairLayerMask, 
                     destroyable => destroyable.IsDestroyed);
-                if(closest != null && closest.RequiredEnergyToRepair <= CurrentEnergy)
-                    Repair(closest);
+                
+                if (closest != null)
+                {
+                    if(closest.RequiredEnergyToRepair <= CurrentEnergy)
+                        Repair(closest);
+                    else
+                    {
+                        OnNotEnoughEnergyToRepair.Invoke();
+                        NotEnoughEnergyToRepair?.Invoke();
+                    }
+                }
             }
         }
 

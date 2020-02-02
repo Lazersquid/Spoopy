@@ -28,6 +28,8 @@ public class Destroyable : MonoBehaviour
     public float DestroyCooldown => destroyCooldown;
     public float CurrDestroyCooldown { get; private set; }
 
+    [SerializeField] private UnityEvent onTriedToDestroyWhileOnCd;
+
     public event Action DestroyCooldownFinished;
     
     private void Awake()
@@ -53,6 +55,14 @@ public class Destroyable : MonoBehaviour
             if(CurrDestroyCooldown <= 0f)
                 DestroyCooldownFinished?.Invoke();
         }
+    }
+
+    /// <summary>
+    /// Called by the destroyer class when it tries to destroy this and doesn't have the energy for it
+    /// </summary>
+    public void OnTriedToDestroyThisWhileOnCooldown()
+    {
+        onTriedToDestroyWhileOnCd.Invoke();
     }
 
     public void Destroy()

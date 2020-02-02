@@ -822,6 +822,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   destroyCooldown: 12
+  onTriedToDestroyWhileOnCd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4305966612712521665}
+        m_MethodName: Shake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &6837377222740497663
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1019,6 +1033,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 160364871192426820}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4305966612712521665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4177201705719154309, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 160364871192426820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9bae41a40942f4907e9b7ffd524fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6837377222565937886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1218,15 +1244,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802c6ad5cc25b094090597d2301d1772, type: 3}
---- !u!198 &2445327857382387859 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
-    type: 3}
-  m_PrefabInstance: {fileID: 6837377222565937886}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2445327857382387857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9154888823464211023, guid: 802c6ad5cc25b094090597d2301d1772,
+    type: 3}
+  m_PrefabInstance: {fileID: 6837377222565937886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2445327857382387859 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9154888823464211021, guid: 802c6ad5cc25b094090597d2301d1772,
     type: 3}
   m_PrefabInstance: {fileID: 6837377222565937886}
   m_PrefabAsset: {fileID: 0}

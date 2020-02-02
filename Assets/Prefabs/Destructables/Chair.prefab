@@ -671,6 +671,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1749440126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370553414192209996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9bae41a40942f4907e9b7ffd524fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 60
+  amount: 0.08
+  duration: 0.2
+  targetObject: {fileID: 8626270094989561838}
 --- !u!1 &5241537177243425778
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +1004,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   destroyCooldown: 12
+  onTriedToDestroyWhileOnCd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1064786975761864711}
+        m_MethodName: Shake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &6837377222740497663
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1167,6 +1197,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc, type: 3}
+--- !u!1 &8626270094989561838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4650017466453971308, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3980765137638547074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &3372397564054186147 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1870029010959070753, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3980765137638547074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1064786975761864711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4177201705719154309, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3980765137638547074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626270094989561838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9bae41a40942f4907e9b7ffd524fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!225 &3040301063884454598 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 2094127065810297924, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
@@ -1179,9 +1233,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3980765137638547074}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &3372397564054186147 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1870029010959070753, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
+--- !u!1 &3370553414192209996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1871272814571192014, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
     type: 3}
   m_PrefabInstance: {fileID: 3980765137638547074}
   m_PrefabAsset: {fileID: 0}

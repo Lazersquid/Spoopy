@@ -362,6 +362,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   destroyCooldown: 12
+  onTriedToDestroyWhileOnCd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4297849372901158590}
+        m_MethodName: Shake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &6837377222740497663
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -661,6 +675,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 170400018583480379}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4297849372901158590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4177201705719154309, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 170400018583480379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9bae41a40942f4907e9b7ffd524fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!225 &2257064905129856127 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 2094127065810297924, guid: 6bd60a2cf2a92e54bb6c7839d99a06fc,
@@ -778,15 +804,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa293a34d8de7e44da2052c267a40d30, type: 3}
---- !u!212 &1410634516889827094 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1212368771839395803, guid: aa293a34d8de7e44da2052c267a40d30,
-    type: 3}
-  m_PrefabInstance: {fileID: 234370146118725837}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &197867473055429641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 143641353951003844, guid: aa293a34d8de7e44da2052c267a40d30,
+    type: 3}
+  m_PrefabInstance: {fileID: 234370146118725837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1410634516889827094 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1212368771839395803, guid: aa293a34d8de7e44da2052c267a40d30,
     type: 3}
   m_PrefabInstance: {fileID: 234370146118725837}
   m_PrefabAsset: {fileID: 0}

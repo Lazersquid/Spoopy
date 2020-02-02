@@ -21,7 +21,18 @@ namespace DefaultNamespace
             {
                 var closest = Utility.GetClosestDestroyableInRange(transform.position, destroyRadius, destroyablesLayermask, 
                     destroyable => !destroyable.IsDestroyed && destroyable.CurrDestroyCooldown <= 0f);
-                if (closest != null)
+
+                // Retrieve closest but don't filter destroyables that are on cooldown
+                // To make the cooldown bar shake
+                if (closest == null)
+                {
+                    closest = Utility.GetClosestDestroyableInRange(transform.position, destroyRadius, destroyablesLayermask, 
+                        destroyable => !destroyable.IsDestroyed);
+                    
+                    if(closest != null)
+                        closest.OnTriedToDestroyThisWhileOnCooldown();
+                }
+                else if (closest != null)
                     Destroy(closest);
             }
         }
