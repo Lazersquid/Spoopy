@@ -11,6 +11,21 @@ TextureImporter:
   - first:
       213: 1286896896297727809
     second: SinkFaucetSprite_2
+  - first:
+      213: -2799939567027399777
+    second: Sink_Splinter_0
+  - first:
+      213: -8893442631005231694
+    second: SinkFaucetSprite_1
+  - first:
+      213: 555155118256676670
+    second: SinkFaucetSprite_3
+  - first:
+      213: -5249994306290604591
+    second: SinkFaucetSprite_4
+  - first:
+      213: -8351104515496509063
+    second: SinkFaucetSprite_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -115,7 +130,7 @@ TextureImporter:
         width: 477
         height: 384
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,7 +151,7 @@ TextureImporter:
         width: 925
         height: 1072
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +172,7 @@ TextureImporter:
         width: 42
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,6 +180,111 @@ TextureImporter:
       bones: []
       spriteID: 147f06ea8e9fbd110800000000000000
       internalID: 1286896896297727809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SinkFaucetSprite_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 935
+        width: 960
+        height: 503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9355ca6ccd9429d0800000000000000
+      internalID: -2799939567027399777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SinkFaucetSprite_1
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1587
+        width: 156
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b52e9ceb05249480800000000000000
+      internalID: -8893442631005231694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SinkFaucetSprite_3
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1504
+        width: 166
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3fdde283ae44b700800000000000000
+      internalID: 555155118256676670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SinkFaucetSprite_4
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1504
+        width: 154
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5a9bc7ef54427b0800000000000000
+      internalID: -5249994306290604591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SinkFaucetSprite_5
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 326
+        width: 253
+        height: 705
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9718baf60baea1c80800000000000000
+      internalID: -8351104515496509063
       vertices: []
       indices: 
       edges: []
