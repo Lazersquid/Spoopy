@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[SelectionBase]
 [DisallowMultipleComponent]
 public class Destroyable : MonoBehaviour
 {
