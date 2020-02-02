@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -38,23 +39,10 @@ namespace DefaultNamespace
         {
             if (Input.GetKeyDown(repairKey))
             {
-                var hits = Physics2D.OverlapCircleAll(transform.position, repairRadius, repairLayerMask);
-                for (int i = 0; i < hits.Length; i++)
-                {
-                    //TODO: Retrieve closest destroyable instead of just the first one in the array
-                    var destroyable = hits[i].GetComponent<Destroyable>();
-                    if (destroyable != null && destroyable.IsDestroyed)
-                    {
-                        if (destroyable.RequiredEnergyToRepair <= CurrentEnergy)
-                            Repair(destroyable);
-                        else
-                        {
-                            OnNotEnoughEnergyToRepair.Invoke();
-                            NotEnoughEnergyToRepair?.Invoke();
-                        }
-                        break;
-                    }
-                }
+                var closest = Utility.GetClosestDestroyableInRange(transform.position, repairRadius, repairLayerMask, 
+                    destroyable => destroyable.IsDestroyed);
+                if(closest != null && closest.RequiredEnergyToRepair <= CurrentEnergy)
+                    Repair(closest);
             }
         }
 
