@@ -751,6 +751,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5408090561886480283, guid: aa293a34d8de7e44da2052c267a40d30,
+        type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.718
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408090561886480283, guid: aa293a34d8de7e44da2052c267a40d30,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408090561886480283, guid: aa293a34d8de7e44da2052c267a40d30,
+        type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 0.809
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408090561886480283, guid: aa293a34d8de7e44da2052c267a40d30,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408090561886480283, guid: aa293a34d8de7e44da2052c267a40d30,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 6.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa293a34d8de7e44da2052c267a40d30, type: 3}
 --- !u!212 &1410634516889827094 stripped

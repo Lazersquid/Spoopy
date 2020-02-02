@@ -6,6 +6,7 @@ public class Ghost : MonoBehaviour
 {
     public float movementSpeed = 5f;
     public float smoothing = 0.1f;
+    public float rotationFactor = 2f;
 
     private Rigidbody2D body;
     private Vector2 refVelocity;
@@ -51,7 +52,7 @@ public class Ghost : MonoBehaviour
             body.velocity = SmoothVelocity(new Vector2(body.velocity.x, 0));
         }
 
-        transform.localEulerAngles = new Vector3(0f, 0f, -2 * body.velocity.x);
+        transform.localEulerAngles = new Vector3(0f, 0f, -1 * rotationFactor * body.velocity.x);
 
         transform.position = new Vector2(
             Mathf.Clamp(transform.position.x, lowerLeft.x, upperRight.x),
