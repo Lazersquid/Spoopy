@@ -24,6 +24,11 @@ public class Destroyable : MonoBehaviour
 
     private DestructionBar _destructionBar;
 
+    [SerializeField] private float destroyCooldown;
+    public float DestroyCooldown => destroyCooldown;
+    public float CurrDestroyCooldown { get; private set; }
+
+    public event Action DestroyCooldownFinished;
     
     private void Awake()
     {
@@ -38,6 +43,16 @@ public class Destroyable : MonoBehaviour
     private void OnDisable()
     {
         _destructionBar.UnregisterDestroyable(this);
+    }
+
+    private void Update()
+    {
+        if (CurrDestroyCooldown > 0f)
+        {
+            CurrDestroyCooldown -= Time.deltaTime;
+            if(CurrDestroyCooldown <= 0f)
+                DestroyCooldownFinished?.Invoke();
+        }
     }
 
     public void Destroy()
@@ -64,5 +79,6 @@ public class Destroyable : MonoBehaviour
         IsDestroyed = false;
         Repaired?.Invoke(this);
         onRepaired.Invoke();
+        CurrDestroyCooldown = destroyCooldown;
     }
 }

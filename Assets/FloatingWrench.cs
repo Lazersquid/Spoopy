@@ -7,12 +7,7 @@ public class FloatingWrench : MonoBehaviour
     [SerializeField] private GameObject _wrench;
 
     private Destroyable _destroyable;
-
-
-    private void OnValidate()
-    {
-        SyncToDestroyable();
-    }
+    
 
     private void Awake()
     {

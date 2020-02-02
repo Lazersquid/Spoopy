@@ -21,7 +21,7 @@ namespace DefaultNamespace
                 for (int i = 0; i < hits.Length; i++)
                 {
                     var destroyable = hits[i].GetComponent<Destroyable>();
-                    if (destroyable != null && !destroyable.IsDestroyed)
+                    if (destroyable != null && !destroyable.IsDestroyed && destroyable.CurrDestroyCooldown <= 0f)
                     {
                         Destroy(destroyable);
                         break;
